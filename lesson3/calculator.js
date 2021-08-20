@@ -2,7 +2,6 @@ export const calc = (expression) => {
   const [a, operator, b] = expression.split(' ');
   let result;
 
-  }
   switch (operator) {
     case '+':
       result = Number(a) + +b;
@@ -20,4 +19,3 @@ export const calc = (expression) => {
 
   return `${expression} = ${result}`;
 };
-

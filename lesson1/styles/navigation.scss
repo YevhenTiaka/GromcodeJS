@@ -1,0 +1,49 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+
+  &__title {
+    flex-grow: 1;
+    margin: 0 auto;
+    font-size: 24px;
+    letter-spacing: 3.6px;
+  }
+  &__filter,
+  &__sort {
+    display: flex;
+    flex-direction: column;
+  }
+  &__sort {
+    margin-left: 30px;
+  }
+  &__search {
+    display: flex;
+    margin: 25px auto;
+  }
+}
+label {
+  font-size: 0.75em;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  margin-bottom: 13px;
+}
+select {
+  width: 100px;
+  background-color: #f7f7f7;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-left: -5px;
+  line-height: 1.375px;
+  color: #333;
+  border: 0;
+}
+@media (min-width: 600px) {
+  .navigation {
+    flex-direction: row;
+    &__search {
+      margin: 0;
+    }
+  }
+}

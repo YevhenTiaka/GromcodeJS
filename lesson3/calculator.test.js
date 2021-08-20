@@ -1,20 +1,24 @@
 import { calc } from './calculator';
 
 it('should plus num', () => {
-  const result = sum(2, 2);
+  const result = calc(2, 2);
   expect(Number).toEqual(4);
 });
 
 it('should minus num ', () => {
-  const result = sum(4, 2);
+  const result = calc(4, 2);
   expect(Number).toEqual(2);
 });
 
 it('should  mult numbers ', () => {
-  const result = sum(2, 3);
+  const result = calc(2, 3);
   expect(Number).toEqual(6);
 });
 it('should divide numbers ', () => {
-  const result = sum(8, 4);
+  const result = calc(8, 4);
   expect(Number).toEqual(2);
+});
+it('should check string ', () => {
+  const result = calc(8, 4);
+  expect('string').toEqual(null);
 });

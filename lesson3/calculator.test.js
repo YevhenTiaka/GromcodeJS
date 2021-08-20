@@ -22,3 +22,7 @@ it('should check string ', () => {
   const result = calc(8, 4);
   expect('string').toEqual(null);
 });
+it('should get null because input is not a string', () => {
+  const result = calc(84);
+  expect(result).toEqual(null);
+});

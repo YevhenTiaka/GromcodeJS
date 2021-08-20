@@ -1,8 +1,8 @@
 import getSum, { getSquareNumbers, getOddNumbers } from './calculator';
 
 it('should get squared numbers ', () => {
-  const result = getSquareNumbers([1, 1]);
-  expect(result).toEqual([1, 1]);
+  const result = getSquareNumbers([2, 4]);
+  expect(result).toEqual([4, 16]);
 });
 
 it('should keep odd numbers only', () => {

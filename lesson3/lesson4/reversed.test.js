@@ -16,6 +16,7 @@ it('should reverse arr', () => {
   const result = reverseArr(['i', 'l', 'm']);
   expect(result).toEqual(['m', 'l', 'i']);
 });
+
 //withdraw tests
 it('should return rest of many ', () => {
   const result = withdraw(['Ann', 'John', 'User'], [1400, 87, -6], 'John', 50);

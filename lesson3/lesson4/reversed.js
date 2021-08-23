@@ -8,7 +8,6 @@ export const reverseArr = (arr) => {
   return result;
 };
 //withdraw----------------------
-
 export const withdraw = (clients, balances, client, amount) => {
   let indexOfPerson = clients.indexOf(client);
 

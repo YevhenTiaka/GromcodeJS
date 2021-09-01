@@ -1,6 +1,6 @@
 export function setButton(buttonText) {
-  const setBtn = document.getElementsByTagName('body');
+  const setBtn = document.querySelector('body');
   setBtn.innerHTML = `<button>${buttonText}</button>`;
   return setBtn;
 }
-console.log(setButton('text button bla la'));
+console.log(setButton('this is button'));

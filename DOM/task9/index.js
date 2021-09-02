@@ -1,4 +1,4 @@
-export function finishForm() {
+function finishForm() {
   const loginForm = document.querySelector('.login-form');
   const newInput = document.createElement('input');
   newInput.setAttribute('type', 'text');
@@ -7,4 +7,3 @@ export function finishForm() {
   const secondInput = document.querySelector('input[name=password]');
   secondInput.setAttribute('type', 'password');
 }
-finishForm();

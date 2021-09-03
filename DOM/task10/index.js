@@ -1,11 +1,10 @@
 export function manageClasses() {
   const one = document.querySelector('.one');
-  one.setAttribute('class', 'selected');
+  one.classList.add('one', 'selected');
   const two = document.querySelector('.two');
-  two.classList.remove('two', 'selected');
+  two.classList.remove('selected');
   const three = document.querySelector('.three');
-  three.toggleAttribute('three_done');
+  three.classList.add('three_done');
   const four = document.querySelector('.four');
   four.classList.add('another-class');
 }
-manageClasses();

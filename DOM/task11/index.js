@@ -5,3 +5,4 @@ export function squareNumbers() {
     elem.dataset.squaredNumber = elem.dataset.number * elem.dataset.number;
   });
 }
+squareNumbers();

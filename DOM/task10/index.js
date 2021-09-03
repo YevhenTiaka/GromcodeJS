@@ -8,3 +8,5 @@ export function manageClasses() {
   const four = document.querySelector('.four');
   four.classList.add('class', 'another-class');
 }
+
+manageClasses();

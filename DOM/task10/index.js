@@ -4,7 +4,7 @@ export function manageClasses() {
   const two = document.querySelector('.two');
   two.classList.remove('selected');
   const three = document.querySelector('.three');
-  three.toggleAttribute('three_done');
+  three.classList.toggle('three_done');
   const four = document.querySelector('.four');
   four.classList.add('another-class');
 }

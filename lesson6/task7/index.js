@@ -1,5 +1,5 @@
+const eventsListElem = document.querySelector('.events-list');
 const logTarget = (text, color) => {
-  const eventsListElem = document.querySelector('.events-list');
   eventsListElem.innerHTML += `<span style ="color:${color};margin-left:8px;">${text}</span>`;
 };
 const logGreenDiv = logTarget.bind(null, 'DIV', 'green');
@@ -25,9 +25,9 @@ spanElem.addEventListener('click', logGreenSpan);
 
 const clearBtn = document.querySelector('.clear-btn');
 //clear BTN
-const eventList = document.querySelector('.events-list');
+
 const cleanWindow = () => {
-  eventList.textContent = '';
+  eventsListElem.textContent = '';
 };
 
 clearBtn.addEventListener('click', cleanWindow);

@@ -34,8 +34,8 @@ clearBtn.addEventListener('click', cleanWindow);
 // remove btn
 const btnRemove = document.querySelector('.remove-handlers-btn');
 const removeFunc = () => {
+  divElem.removeEventListener('click', logGreenDiv, true);
   divElem.removeEventListener('click', logGreenDiv);
-  divElem.removeEventListener('click', logGreenP);
 
   pElem.removeEventListener('click', logGreyP, true);
   pElem.removeEventListener('click', logGreenP);
@@ -48,10 +48,12 @@ btnRemove.addEventListener('click', removeFunc);
 //attach BTN
 const attachBtn = document.querySelector('.attach-handlers-btn');
 const attachedFunc = () => {
+  divElem.addEventListener('click', logGreenDiv, true);
   divElem.addEventListener('click', logGreenDiv);
-  divElem.addEventListener('click', logGreenP);
+
   pElem.addEventListener('click', logGreyP, true);
   pElem.addEventListener('click', logGreenP);
+
   spanElem.addEventListener('click', logGreySpan, true);
   spanElem.addEventListener('click', logGreenSpan);
 };

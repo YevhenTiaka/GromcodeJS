@@ -1,4 +1,10 @@
+// ================= searchElem ===============================
 const eventsListElem = document.querySelector('.events-list');
+const divElem = document.querySelector('.rect_div');
+const pElem = document.querySelector('.rect_p');
+const spanElem = document.querySelector('.rect_span');
+
+// ================= elemCreateFunc ============================
 const logTarget = (text, color) => {
   eventsListElem.innerHTML += `<span style ="color:${color};margin-left:8px;">${text}</span>`;
 };
@@ -10,31 +16,18 @@ const logGreyDiv = logTarget.bind(null, 'DIV', 'grey');
 const logGreyP = logTarget.bind(null, 'P', 'grey');
 const logGreySpan = logTarget.bind(null, 'SPAN', 'grey');
 
-const divElem = document.querySelector('.rect_div');
-const pElem = document.querySelector('.rect_p');
-const spanElem = document.querySelector('.rect_span');
-
-divElem.addEventListener('click', logGreenDiv, true);
-divElem.addEventListener('click', logGreenDiv);
-
-pElem.addEventListener('click', logGreyP, true);
-pElem.addEventListener('click', logGreenP);
-
-spanElem.addEventListener('click', logGreySpan, true);
-spanElem.addEventListener('click', logGreenSpan);
-
+// =================== clear BTN ===============================
 const clearBtn = document.querySelector('.clear-btn');
-//clear BTN
 
 const cleanWindow = () => {
   eventsListElem.textContent = '';
 };
 
 clearBtn.addEventListener('click', cleanWindow);
-// remove btn
+// ==================== remove btn ==============================
 const btnRemove = document.querySelector('.remove-handlers-btn');
 const removeFunc = () => {
-  divElem.removeEventListener('click', logGreenDiv, true);
+  divElem.removeEventListener('click', logGreenDiv, false);
   divElem.removeEventListener('click', logGreenDiv);
 
   pElem.removeEventListener('click', logGreyP, true);
@@ -45,10 +38,10 @@ const removeFunc = () => {
 };
 
 btnRemove.addEventListener('click', removeFunc);
-//attach BTN
+// ====================== attach BTN ==============================
 const attachBtn = document.querySelector('.attach-handlers-btn');
 const attachedFunc = () => {
-  divElem.addEventListener('click', logGreenDiv, true);
+  divElem.addEventListener('click', logGreenDiv, false);
   divElem.addEventListener('click', logGreenDiv);
 
   pElem.addEventListener('click', logGreyP, true);
@@ -58,4 +51,5 @@ const attachedFunc = () => {
   spanElem.addEventListener('click', logGreenSpan);
 };
 attachBtn.addEventListener('click', attachedFunc);
+
 attachedFunc();

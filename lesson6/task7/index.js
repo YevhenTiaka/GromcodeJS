@@ -41,7 +41,7 @@ btnRemove.addEventListener('click', removeFunc);
 // ====================== attach BTN ==============================
 const attachBtn = document.querySelector('.attach-handlers-btn');
 const attachedFunc = () => {
-  divElem.addEventListener('click', logGreyDiv, false);
+  divElem.addEventListener('click', logGreyDiv, true);
   divElem.addEventListener('click', logGreenDiv);
 
   pElem.addEventListener('click', logGreyP, true);

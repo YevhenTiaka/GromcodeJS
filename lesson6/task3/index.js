@@ -1,8 +1,11 @@
-const checkboxElem = document.querySelector('.task-status');
-checkboxElem.addEventListener('change', () => {
-  if (checkboxElem.checked) {
-    console.log(true);
-  } else {
-    console.log(false);
-  }
-});
+// put your code here
+const btns = document.querySelectorAll('.pagination__page');
+const arrayBtns = [...btns];
+// const handleClick = (event) => {
+//   console.log(event.target.getAttribute('data-page-number'));
+// };
+arrayBtns.forEach((btn) =>
+  btn.addEventListener('click', (event) =>
+    console.log(event.target.getAttribute('data-page-number'))
+  )
+);

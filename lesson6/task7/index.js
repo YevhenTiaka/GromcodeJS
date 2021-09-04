@@ -58,3 +58,4 @@ const attachedFunc = () => {
 };
 
 attachBtn.addEventListener('click', attachedFunc);
+attachedFunc();

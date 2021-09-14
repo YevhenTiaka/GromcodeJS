@@ -11,10 +11,7 @@ const fetchUserData = (userName) =>
   );
 
 const renderUserData = (userData) => {
-  console.log(userData);
-  // eslint-disable-next-line camelcase
   const { avatar_url, name, location } = userData;
-  // eslint-disable-next-line camelcase
   userAvatarElem.src = avatar_url;
   userNameElem.textContent = name;
   userLocationElem.textContent = location ? `from ${location}` : '';
@@ -27,4 +24,3 @@ const onSearchUser = () => {
   const userName = userNameInputElem.value;
   fetchUserData(userName).then((userData) => renderUserData(userData));
 };
-showUserBtnElem.addEventListener('click', onSearchUser);

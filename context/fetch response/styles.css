@@ -12,6 +12,7 @@
   margin: auto;
   align-items: center;
 }
+
 .user__info {
   text-align: center;
   font-size: 24px;
@@ -23,6 +24,7 @@
   height: 320px;
   border-radius: 50%;
 }
+
 .user__name {
   font-weight: 700;
 }
@@ -34,6 +36,7 @@
 .name-form {
   margin: 32px auto;
 }
+
 .name-form__input {
   height: 32px;
   border: 3px solid #ccc;

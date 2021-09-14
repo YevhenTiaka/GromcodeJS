@@ -1,15 +1,23 @@
-const calc = (initialValue) => {
-  let result = initialValue;
-  const calculator = {
-    add(value) {
-      result += value;
-      return console.log(this);
-    },
-    mult(value) {
-      result *= value;
-      return this;
-    },
-  };
+import { initTodoListHandlers } from './todoList.js';
+import { renderTasks } from './render.js';
+import { getTasksList } from './tasksGateway.js';
+import { getItem, setItem } from './storage.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  getTasksList().then((tasksList) => {
+    setItem('tasksList', tasksList);
+    renderTasks();
+  });
+  initTodoListHandlers();
+});
+const onStorageChange = (e) => {
+  if (e.key === 'tasksList') {
+    renderTasks();
+  }
 };
 
-calc(2);
+window.addEventListener('storage', onStorageChange);
+
+// 1. Get data from server
+// 2. Save data to front-end storage
+// 3.

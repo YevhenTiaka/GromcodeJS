@@ -1,4 +1,4 @@
-import { getItem } from './storage';
+import { getItem } from './storage.js';
 
 const listElem = document.querySelector('.list');
 export const renderTasks = () => {
@@ -6,15 +6,14 @@ export const renderTasks = () => {
   const taskList = getItem('tasksList') || [];
   const listItemsElems = taskList
     .sort((a, b) => a.done - b.done)
-    .map(({ text, done, id }) => {
+    .map(({ text, done }) => {
       const listItemElem = document.createElement('li');
-      listItemElem.dataset.id = id;
-      listItemElem.classList.add('list__item');
+
+      listItemElem.classList.add('list-item');
       if (done) {
-        listItemElem.classList.add('list__item_done');
+        listItemElem.classList.add('list-item_done');
       }
       const checkboxElem = document.createElement('input');
-      checkboxElem.dataset.id = id;
       checkboxElem.setAttribute('type', 'checkbox');
       checkboxElem.checked = done;
       checkboxElem.classList.add('list__item-checkbox');
@@ -23,5 +22,3 @@ export const renderTasks = () => {
     });
   listElem.append(...listItemsElems);
 };
-
-renderTasks();

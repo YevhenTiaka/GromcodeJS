@@ -1,36 +1,32 @@
-import { getItem, setItem } from './storage';
-import { renderTasks } from './render';
+import { renderTasks } from './render.js';
+import { getItem, setItem } from './storage.js';
+import { createTask, getTasksList } from './tasksGateway.js';
 
 const inputValue = document.querySelector('.task-input');
+
 export const addTask = () => {
-  const tasksList = getItem('tasksList') || [];
-  if (inputValue.value !== '') {
-    tasksList.push({
-      text: inputValue.value,
-      done: false,
-      id: (Math.random() * 100).toFixed(),
-    });
-  }
-  setItem('tasksList', tasksList);
-  renderTasks();
-  inputValue.value = '';
-};
-
-export const checked = (event) => {
-  const tasksList = getItem('tasksList');
-  const isCheckbox = event.target.classList.contains('list__item-checkbox');
-
-  if (!isCheckbox) {
+  const text = inputValue.value;
+  if (!text) {
     return;
   }
-  const checkboxId = event.target.dataset.id;
 
-  const filterId = tasksList.find((el) => el.id === checkboxId);
+  inputValue.value = '';
 
-  // eslint-disable-next-line no-unused-expressions
-  event.target.checked ? (filterId.done = true) : (filterId.done = false);
+  const newTask = {
+    text: inputValue.value,
+    done: false,
+    createDate: new Date().toISOString(),
+  };
 
-  setItem('tasksList', tasksList);
-
-  renderTasks();
+  createTask(newTask)
+    .then(() => getTasksList())
+    .then((newTasksList) => {
+      setItem('tasksList', newTasksList);
+      renderTasks();
+    });
 };
+// 1. Prepare data
+// 2. Write data to database
+// 3. Read new data from server
+// 4. Save new data to front-end storage
+// 5. Update UI based on new data

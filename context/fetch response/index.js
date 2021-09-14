@@ -2,8 +2,9 @@ const userAvatarElem = document.querySelector('.user__avatar');
 const userNameElem = document.querySelector('.user__name');
 const userLocationElem = document.querySelector('.user__location');
 
-const defaultAvatar =
-  'https://www.pngfind.com/pngs/m/137-1375413_github-clipart-github-logo-github-cat-hd-png.png';
+const defaultAvatar = 'https://avatars3.githubusercontent.com/a';
+
+userAvatarElem.src = defaultAvatar;
 const fetchUserData = (userName) =>
   fetch(`https://api.github.com/users/${userName}`).then((response) =>
     response.json()

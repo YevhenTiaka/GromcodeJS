@@ -9,7 +9,6 @@ userAvatarElem.src = defaultAvatar;
 
 // 'https://api.github.com/users/USERNAME'
 // fetch and render userdata ...
-
 const fetchUserData = (userName) =>
   fetch(`https://api.github.com/users/${userName}`).then((response) =>
     response.json()

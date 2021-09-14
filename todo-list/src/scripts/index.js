@@ -1,14 +1,15 @@
-import { initTodoListHandlers } from './todoList.js';
-import { renderTasks } from './render.js';
-
-document.addEventListener('DOMContentLoaded', () => {
-  renderTasks();
-  initTodoListHandlers();
-});
-const onStorageChange = (event) => {
-  if (event.key === 'tasksList') {
-    renderTasks();
-  }
+const calc = (initialValue) => {
+  let result = initialValue;
+  const calculator = {
+    add(value) {
+      result += value;
+      return console.log(this);
+    },
+    mult(value) {
+      result *= value;
+      return this;
+    },
+  };
 };
 
-window.addEventListener('storage', onStorageChange);
+calc(2);

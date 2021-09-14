@@ -1,21 +1,24 @@
-const addImage = (imgSrc, callback) => {
-  const imgElem = document.createElement('img');
-  imgElem.setAttribute('alt', 'My Photo');
-  imgElem.src = imgSrc;
-  const containerElem = document.querySelector('.page');
-  containerElem.append(imgElem);
-  const onImageLoaded = () => {
-    const width = imgElem;
-    const height = imgElem;
-    callback(width, height);
-  };
-  imgElem.addEventListener('load', onImageLoaded);
-};
-const imgSrc =
-  'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg';
-// callback function
-const onImageLoaded = ({ width, height }) => {
-  const sizeElem = document.querySelector('.image-size');
-  sizeElem.textContent = `${width} x ${height}`;
-};
-addImage(imgSrc, onImageLoaded);
+const getValueWithDelay = (value, delay) =>
+  new Promise((resolve) => {
+    setTimeout(() => {
+      console.log(value);
+      resolve(value);
+    }, delay);
+  });
+
+const asyncNum1 = getValueWithDelay(56, 1000);
+const asyncNum2 = getValueWithDelay(12, 2000);
+const asyncNum3 = getValueWithDelay('10', 3000);
+
+const getSum = (numbers) =>
+  numbers
+    .filter((value) => !isNaN(value))
+    .reduce((acc, num) => acc + Number(num), 0);
+const asyncSum = (...asyncNumbers) =>
+  Promise.all(asyncNumbers)
+    .then((numbers) => getSum(numbers))
+    .catch(() => Promise.reject(new Error("Can't calculate")));
+
+asyncSum(asyncNum1, Promise.reject(new Error('error')), asyncNum3).then(
+  (result) => console.log(result)
+);

@@ -1,5 +1,3 @@
-const allInputs = document.querySelectorAll('input');
-
 const emailInput = document.getElementById('email');
 const nameInput = document.getElementById('name');
 const passwordInput = document.getElementById('password');
@@ -26,7 +24,6 @@ const getData = (event) => {
   }
   console.log(users);
 };
-// обработчик для сабмит disabled
 loginForm.addEventListener('input', getData);
 
 const sendDataBtn = document.querySelector('.submit-button');
@@ -52,12 +49,12 @@ const sumbitCreatedUser = (event) => {
 };
 loginForm.addEventListener('submit', sumbitCreatedUser);
 
-// function getUsersList() {
-//   return fetch(
-//     `https://6141977c357db50017b3db7a.mockapi.io/api/v1/users2`
-//   ).then((response) => response.json());
-// }
+function getUsersList() {
+  return fetch(
+    `https://6141977c357db50017b3db7a.mockapi.io/api/v1/users2`
+  ).then((response) => response.json());
+}
 
-// getUsersList().then((data) => {
-//   console.log(data);
-// });
+getUsersList().then((data) => {
+  alert(JSON.stringify(data[data.length - 1]));
+});

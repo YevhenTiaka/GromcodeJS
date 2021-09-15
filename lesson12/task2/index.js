@@ -55,8 +55,12 @@ const sumbitCreatedUser = (event) => {
       `${`https://6141977c357db50017b3db7a.mockapi.io/api/v1/users2/`}/${userId}`
     ).then((response) => response.json());
   }
+  const errorText = document.querySelector('.error-text');
+
   getUsers().then((user) => {
-    getUsersById(user.length + 1).then((data) => alert(JSON.stringify(data)));
+    getUsersById(user.length + 1)
+      .then((data) => alert(JSON.stringify(data)))
+      .catch((errorText.textContent = 'Failed to create user'));
   });
   document.forms[0].reset();
 };

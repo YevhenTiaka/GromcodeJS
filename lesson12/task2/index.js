@@ -44,9 +44,6 @@ const createUser = (usersData) =>
 const sumbitCreatedUser = (event) => {
   event.preventDefault();
   createUser(users);
-  emailInput.value = '';
-  nameInput.value = '';
-  passwordInput.value = '';
 
   function getUsers() {
     return fetch(
@@ -61,14 +58,8 @@ const sumbitCreatedUser = (event) => {
   getUsers().then((user) => {
     getUsersById(user.length + 1).then((data) => alert(JSON.stringify(data)));
   });
-  // function getUsersList() {
-  //   return fetch(
-  //     `https://6141977c357db50017b3db7a.mockapi.io/api/v1/users2`
-  //   ).then((response) => response.json());
-  // }
-
-  // getUsersList().then((data) => {
-  //   alert(JSON.stringify(data[data.length - 1]));
-  // });
+  emailInput.value = '';
+  nameInput.value = '';
+  passwordInput.value = '';
 };
 loginForm.addEventListener('submit', sumbitCreatedUser);

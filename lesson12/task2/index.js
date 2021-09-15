@@ -31,7 +31,8 @@ const sendDataBtn = document.querySelector('.submit-button');
 // eslint-disable-next-line arrow-body-style
 // eslint-disable-next-line no-shadow
 // eslint-disable-next-line arrow-body-style
-
+const errorText = document.querySelector('.error-text');
+// eslint-disable-next-line no-return-assign
 const createUser = (usersData) =>
   fetch(`https://6141977c357db50017b3db7a.mockapi.io/api/v1/users2/`, {
     method: 'POST',
@@ -39,7 +40,7 @@ const createUser = (usersData) =>
       'Content-Type': 'application/json;charset=utf-8',
     },
     body: JSON.stringify(usersData),
-  });
+  }).catch(console.log((errorText.textContent = 'Failed to create user')));
 
 const sumbitCreatedUser = (event) => {
   event.preventDefault();
@@ -55,12 +56,9 @@ const sumbitCreatedUser = (event) => {
       `${`https://6141977c357db50017b3db7a.mockapi.io/api/v1/users2/`}/${userId}`
     ).then((response) => response.json());
   }
-  const errorText = document.querySelector('.error-text');
 
   getUsers().then((user) => {
-    getUsersById(user.length + 1)
-      .then((data) => alert(JSON.stringify(data)))
-      .catch((errorText.textContent = 'Failed to create user'));
+    getUsersById(user.length + 1).then((data) => alert(JSON.stringify(data)));
   });
   document.forms[0].reset();
 };

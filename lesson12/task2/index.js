@@ -37,9 +37,11 @@ const createUser = (usersData) =>
     method: 'POST',
     headers: { 'Content-Type': 'application/json;charset=utf-8' },
     body: JSON.stringify(usersData),
-  })
-    .then(document.forms[0].reset())
-    .catch((errorText.textContent = 'Failed to create user'));
+  }).then(
+    ((emailInput.value = ''),
+    ((nameInput.value = ''), (passwordInput.value = '')))
+  );
+// .catch((errorText.textContent = 'Failed to create user'));
 
 const sumbitCreatedUser = (event) => {
   event.preventDefault();

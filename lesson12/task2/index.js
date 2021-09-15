@@ -52,12 +52,12 @@ const sumbitCreatedUser = (event) => {
 };
 loginForm.addEventListener('submit', sumbitCreatedUser);
 
-function getUsersList() {
-  return fetch(
-    `https://6141977c357db50017b3db7a.mockapi.io/api/v1/users2`
-  ).then((response) => response.json());
-}
+// function getUsersList() {
+//   return fetch(
+//     `https://6141977c357db50017b3db7a.mockapi.io/api/v1/users2`
+//   ).then((response) => response.json());
+// }
 
-getUsersList().then((data) => {
-  console.log(data);
-});
+// getUsersList().then((data) => {
+//   console.log(data);
+// });

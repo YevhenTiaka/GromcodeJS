@@ -40,7 +40,7 @@ const createUser = (usersData) =>
       'Content-Type': 'application/json;charset=utf-8',
     },
     body: JSON.stringify(usersData),
-  }).catch(console.log((errorText.textContent = 'Failed to create user')));
+  }).catch((errorText.textContent = 'Failed to create user'));
 
 const sumbitCreatedUser = (event) => {
   event.preventDefault();

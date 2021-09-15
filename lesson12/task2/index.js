@@ -46,15 +46,15 @@ const sumbitCreatedUser = (event) => {
   emailInput.value = '';
   nameInput.value = '';
   passwordInput.value = '';
+
+  function getUsersList() {
+    return fetch(
+      `https://6141977c357db50017b3db7a.mockapi.io/api/v1/users2`
+    ).then((response) => response.json());
+  }
+
+  getUsersList().then((data) => {
+    alert(JSON.stringify(data[data.length - 1 - 1]));
+  });
 };
 loginForm.addEventListener('submit', sumbitCreatedUser);
-
-// function getUsersList() {
-//   return fetch(
-//     `https://6141977c357db50017b3db7a.mockapi.io/api/v1/users2`
-//   ).then((response) => response.json());
-// }
-
-// getUsersList().then((data) => {
-//   alert(JSON.stringify(data[data.length - 1]));
-// });

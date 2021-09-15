@@ -22,7 +22,6 @@ const getData = (event) => {
   if (requiredFields) {
     submitBtn.removeAttribute('disabled');
   }
-  console.log(users);
 };
 loginForm.addEventListener('input', getData);
 
@@ -36,11 +35,11 @@ const errorText = document.querySelector('.error-text');
 const createUser = (usersData) =>
   fetch(`https://6141977c357db50017b3db7a.mockapi.io/api/v1/users2/`, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json;charset=utf-8',
-    },
+    headers: { 'Content-Type': 'application/json;charset=utf-8' },
     body: JSON.stringify(usersData),
-  }).catch((errorText.textContent = 'Failed to create user'));
+  })
+    .then(document.forms[0].reset())
+    .catch((errorText.textContent = 'Failed to create user'));
 
 const sumbitCreatedUser = (event) => {
   event.preventDefault();
@@ -60,6 +59,5 @@ const sumbitCreatedUser = (event) => {
   getUsers().then((user) => {
     getUsersById(user.length + 1).then((data) => alert(JSON.stringify(data)));
   });
-  document.forms[0].reset();
 };
 loginForm.addEventListener('submit', sumbitCreatedUser);

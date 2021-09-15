@@ -31,6 +31,7 @@ const sendDataBtn = document.querySelector('.submit-button');
 // eslint-disable-next-line arrow-body-style
 // eslint-disable-next-line no-shadow
 // eslint-disable-next-line arrow-body-style
+
 const createUser = (usersData) =>
   fetch(`https://6141977c357db50017b3db7a.mockapi.io/api/v1/users2/`, {
     method: 'POST',
@@ -47,14 +48,27 @@ const sumbitCreatedUser = (event) => {
   nameInput.value = '';
   passwordInput.value = '';
 
-  function getUsersList() {
+  function getUsers() {
     return fetch(
-      `https://6141977c357db50017b3db7a.mockapi.io/api/v1/users2`
+      `https://6141977c357db50017b3db7a.mockapi.io/api/v1/users2/`
     ).then((response) => response.json());
   }
-
-  getUsersList().then((data) => {
-    alert(JSON.stringify(data[data.length - 1]));
+  function getUsersById(userId) {
+    return fetch(
+      `${`https://6141977c357db50017b3db7a.mockapi.io/api/v1/users2/`}/${userId}`
+    ).then((response) => response.json());
+  }
+  getUsers().then((user) => {
+    getUsersById(user.length + 1).then((data) => alert(JSON.stringify(data)));
   });
+  // function getUsersList() {
+  //   return fetch(
+  //     `https://6141977c357db50017b3db7a.mockapi.io/api/v1/users2`
+  //   ).then((response) => response.json());
+  // }
+
+  // getUsersList().then((data) => {
+  //   alert(JSON.stringify(data[data.length - 1]));
+  // });
 };
 loginForm.addEventListener('submit', sumbitCreatedUser);

@@ -31,14 +31,14 @@ const sendDataBtn = document.querySelector('.submit-button');
 // eslint-disable-next-line arrow-body-style
 // eslint-disable-next-line no-shadow
 // eslint-disable-next-line arrow-body-style
-// const createUser = (usersData) =>
-//   fetch(`https://6141977c357db50017b3db7a.mockapi.io/api/v1/users2/`, {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json;charset=utf-8',
-//     },
-//     body: JSON.stringify(usersData),
-//   });
+const createUser = (usersData) =>
+  fetch(`https://6141977c357db50017b3db7a.mockapi.io/api/v1/users2/`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8',
+    },
+    body: JSON.stringify(usersData),
+  });
 
 const sumbitCreatedUser = (event) => {
   event.preventDefault();

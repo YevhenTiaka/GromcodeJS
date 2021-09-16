@@ -9,7 +9,7 @@ import { showSpinner, hideSpinner } from './spinner.js';
 // fetch and render userdata ...
 
 const defaultUser = {
-  avatar_url: 'https://avatars3.githubusercontent.com/a',
+  avatar_url: 'https://avatars3.githubusercontent.com/u10001',
   name: ' ',
   location: '',
 };

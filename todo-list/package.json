@@ -1,0 +1,23 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "build:styles": "sass task1/src/styles/index.scss task1/dist/styles.css",
+    "copy:html": "cp task1/src/index.html task1/dist/index.html",
+    "copy:scripts": "cp -R task1/src/scripts task1/dist/scripts",
+    "clean": "rm -rf /dist",
+    "build": " npm run clean && npm run build:styles && npm run copy:html && npm run copy:scripts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.15.6",
+    "jest": "^27.2.0",
+    "sass": "^1.41.1"
+  }
+}

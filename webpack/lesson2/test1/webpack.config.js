@@ -3,12 +3,11 @@ module.exports = {
   output: {
     filename: 'bundle.js',
   },
-
   module: {
     rules: [
       {
-        test: /.s?css$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        test: /.css$/,
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /.(jpg|png)$/,

@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import './styles.css';
 
 const rootElement = document.querySelector('#root');
+
 const element = (
   <div className='greeting'>
-    <div className='greeting__title'>Hello, world!</div>
-    <div className='greeting__text'>I'm learning React</div>
+    <h1 className='greeting__title'>Hello, world!</h1>
+    <p className='greeting__text'>I'm learning React</p>
   </div>
 );
-console.log(element);
-// eslint-disable-next-line no-undef
+
 ReactDOM.render(element, rootElement);

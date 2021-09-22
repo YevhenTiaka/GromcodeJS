@@ -160,5 +160,12 @@
   "bugs": {
     "url": "https://github.com/YevhenTiaka/newProject/issues"
   },
-  "homepage": "https://github.com/YevhenTiaka/newProject#readme"
+  "homepage": "https://github.com/YevhenTiaka/newProject#readme",
+  "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.14.9",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.3.0"
+  }
 }

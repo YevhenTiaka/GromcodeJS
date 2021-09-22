@@ -8,5 +8,4 @@ const element = React.createElement('div', { className: 'greeting' }, [
     `I'm learning React`
   ),
 ]);
-
 ReactDOM.render(element, rootElement);

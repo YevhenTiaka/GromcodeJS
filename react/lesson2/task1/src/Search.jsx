@@ -1,12 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-import './index.scss';
-
-import './search.scss';
-const rootElement = document.querySelector('#root');
-const Greeting = (props) => {
-  const element = (
+export default Search = (props) => {
+  return (
     <div className='search'>
       <h1 className='search__title'>
         {` Hello, ${props.name}. What to search for you?`}
@@ -17,7 +10,4 @@ const Greeting = (props) => {
       </div>
     </div>
   );
-
-  return element;
 };
-ReactDOM.render(<Greeting name='Michael' />, rootElement);

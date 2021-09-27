@@ -6,14 +6,14 @@ const webpack = require('webpack');
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
   const config = {
-    entry: './src/index.js',
+    entry: './src/index.jsx',
     output: {
       filename: 'bundle.js',
     },
     module: {
       rules: [
         {
-          test: /.js$/,
+          test: /.jsx?$/,
           use: ['babel-loader'],
         },
         {

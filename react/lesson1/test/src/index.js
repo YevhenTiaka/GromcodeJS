@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './styles.css';
 
 const rootElement = document.querySelector('#root');
-
 const element = (
   <div className='greeting'>
-    <h1 className='greeting__title'>Hello, world!</h1>
-    <p className='greeting__text'>I'm learning React</p>
+    <div className='greeting__title'>Hello, world!</div>
+    <div className='greeting__text'>I'm learning React</div>
   </div>
 );
-
+console.log(element);
+// eslint-disable-next-line no-undef
 ReactDOM.render(element, rootElement);

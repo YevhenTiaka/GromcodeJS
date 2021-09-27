@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default Search = (props) => {
   return (
     <div className='search'>

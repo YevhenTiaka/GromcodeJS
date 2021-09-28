@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Greeting from './Greeting';
+import Profile from './Profile';
 import './index.scss';
+
+const userData = {
+  firstName: 'John',
+  lastName: 'Doe',
+  birthDate: '1991-01-17T11:11:11.819Z',
+  birthPlace: 'London',
+};
 
 const rootElement = document.querySelector('#root');
 
-ReactDOM.render(
-  <Greeting
-    firstName='John'
-    lastName='Doe'
-    birthDate={new Date('2001-01-01T11:11:11.819Z')}
-  />,
-  rootElement
-);
+ReactDOM.render(<Profile userData={userData} />, rootElement);

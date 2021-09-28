@@ -1,12 +1,14 @@
 import React from 'react';
-import Counter from './Counter';
+import Clock from './Clock';
+import Clock2 from './Clock2';
 
 const App = () => {
   return (
     <>
-      <Counter start={17} interval={1000} />
-      <Counter start={1} interval={500} />
-      <Counter start={7} interval={200} />
+      <Clock location={'New York'} offset={-5} />
+      <Clock location={'Kiev'} offset={2} />
+      <Clock location={'London'} offset={0} />
+      <Clock2 location={'Reni'} offset={4} />
     </>
   );
 };

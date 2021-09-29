@@ -18,11 +18,11 @@ class Counter extends Component {
       counter: this.state.counter + 1,
     });
   };
-  reset = () => {
+  reset() {
     this.setState({
       counter: (this.state.counter = 0),
     });
-  };
+  }
   render() {
     return (
       <div className='counter'>
@@ -33,7 +33,7 @@ class Counter extends Component {
         >
           -
         </button>
-        <span className='counter__value' onClick={this.reset}>
+        <span className='counter__value' onClick={() => this.reset()}>
           {this.state.counter}
         </span>
         <button

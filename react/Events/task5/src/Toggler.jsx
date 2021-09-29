@@ -1,27 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class Toggler extends React.Component {
+class Toggler extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: 'Off',
+      buttonValue: 'Off',
     };
   }
 
-  toggle() {
-    this.state.input === 'Off'
-      ? this.setState({
-          input: 'On',
-        })
-      : this.setState({
-          input: 'Off',
-        });
-  }
+  handleClick = () => {
+    this.state.buttonValue === 'Off'
+      ? this.setState({ buttonValue: 'On' })
+      : this.setState({ buttonValue: 'Off' });
+  };
 
   render() {
     return (
-      <button className='toggler' onClick={() => this.toggle()}>
-        {this.state.input}
+      <button className='button' onClick={this.handleClick}>
+        {this.state.buttonValue}
       </button>
     );
   }

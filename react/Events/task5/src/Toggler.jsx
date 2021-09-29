@@ -16,7 +16,7 @@ class Toggler extends Component {
 
   render() {
     return (
-      <button className='button' onClick={this.handleClick}>
+      <button className='toggler' onClick={this.handleClick}>
         {this.state.buttonValue}
       </button>
     );

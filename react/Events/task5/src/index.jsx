@@ -5,4 +5,4 @@ import './index.scss';
 
 const rootElement = document.querySelector('#root');
 
-ReactDOM.render(<Toggler toggleOff='Off' />, rootElement);
+ReactDOM.render(<Toggler />, rootElement);

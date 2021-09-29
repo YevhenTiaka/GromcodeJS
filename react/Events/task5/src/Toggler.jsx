@@ -7,7 +7,6 @@ class Toggler extends Component {
       buttonValue: 'Off',
     };
   }
-
   handleClick = () => {
     this.state.buttonValue === 'Off'
       ? this.setState({ buttonValue: 'On' })

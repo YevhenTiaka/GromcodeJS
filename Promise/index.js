@@ -1,37 +1,36 @@
-// input
-// output undefined
+const loginForm = document.querySelector('.login-form');
+const submitBtn = document.querySelector('.submit-button');
+const errorText = document.querySelector('.error-text');
 
-// input  fetch url (string),obj, headers)
-// output  fetch obj Promise
-function saveUser(userData) {
-  const res = fetch(
-    'https://5e5cf5eb97d2ea0014796f01.mockapi.io/api/v1/users',
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(userData),
-    }
-  )
+const serverUrl = 'https://6141977c357db50017b3db7a.mockapi.io/api/v1/users2/';
+// algo
+// 1. read form -get user info +++
+// 2. send data to  server
+// 3. handle server response
+const CreateUserHandler = (event) => {
+  event.preventDefault();
+
+  const usersData = Object.fromEntries(new FormData(loginForm));
+  fetch(serverUrl, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json;charset=utf-8' },
+    body: JSON.stringify(usersData),
+  })
     .then((response) => response.json())
     .then((body) => {
-      console.log(body);
+      loginForm.reset();
+      alert(JSON.stringify(body));
     })
-    .catch((e) => {});
-
-  // input callback
-  // output promise
-  console.log(res);
-}
-
-const user = {
-  email: 'test@gmail.ru',
-  firstName: 'Tom',
-  lastName: 'Johnson',
-  city: 'Cape Town',
-  age: 20,
+    .catch(() => {
+      errorText.textContent = 'Failed to create user';
+    });
 };
-
-saveUser(user);
-console.log(JSON.stringify(user));
+const validateFormHandler = () => {
+  if (loginForm.reportValidity()) {
+    submitBtn.removeAttribute('disabled');
+  } else {
+    submitBtn.setAttribute('disabled', true);
+  }
+};
+loginForm.addEventListener('input', validateFormHandler);
+loginForm.addEventListener('submit', CreateUserHandler);

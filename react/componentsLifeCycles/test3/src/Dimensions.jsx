@@ -10,9 +10,8 @@ class Dimesions extends React.Component {
     };
   }
   componentDidMount() {
-    const titleElement = document.querySelector('title');
-    titleElement.innerHTML = `${this.state.width}px- ${this.state.height}px`;
     window.addEventListener('resize', this.onResize);
+    document.title = `${this.state.width} x ${this.state.height}`;
   }
   componentWillUnmount() {
     window.removeEventListener('resize', this.onResize);

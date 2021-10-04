@@ -6,4 +6,3 @@ const rootElement = document.querySelector('#root');
 const titleElement = document.querySelector('title');
 
 ReactDOM.render(<Dimensions />, rootElement);
-ReactDOM.render(<Dimensions />, titleElement);

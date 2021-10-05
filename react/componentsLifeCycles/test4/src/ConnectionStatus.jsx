@@ -1,29 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class ConnectionStatus extends Component {
+class ConnectionStatus extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      online: true,
-    };
+    this.state = { online: window.navigator.onLine };
   }
-  onToggle = (event) => {
-    const { onLine } = event.target.navigator;
-    this.setState({
-      online: onLine,
-    });
-  };
-
   componentDidMount() {
-    window.addEventListener('online', this.onToggle);
-    window.addEventListener('offline', this.onToggle);
+    window.addEventListener('online', this.handleNetworkChange);
+    window.addEventListener('offline', this.handleNetworkChange);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('online', this.onToggle);
-    window.removeEventListener('offline', this.onToggle);
+    window.removeEventListener('online', this.handleNetworkChange);
+    window.removeEventListener('offline', this.handleNetworkChange);
   }
 
+  handleNetworkChange = () => {
+    this.setState({ online: window.navigator.onLine });
+  };
   render() {
     if (this.state.online) {
       return <div className='status'>online</div>;

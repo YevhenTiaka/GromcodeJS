@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Search from './Search.jsx';
+import UserForm from './UserForm.jsx';
 import './index.scss';
-
+import App from './App';
 const rootElement = document.querySelector('#root');
 
-ReactDOM.render(<Search />, rootElement);
+ReactDOM.render(<App />, rootElement);

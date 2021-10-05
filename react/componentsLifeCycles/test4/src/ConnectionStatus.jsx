@@ -6,13 +6,13 @@ class ConnectionStatus extends React.Component {
     this.state = { online: window.navigator.onLine };
   }
   componentDidMount() {
-    window.addEventListener('offline', this.handleNetworkChange);
     window.addEventListener('online', this.handleNetworkChange);
+    window.addEventListener('offline', this.handleNetworkChange);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('offline', this.handleNetworkChange);
     window.removeEventListener('online', this.handleNetworkChange);
+    window.removeEventListener('offline', this.handleNetworkChange);
   }
 
   handleNetworkChange = () => {

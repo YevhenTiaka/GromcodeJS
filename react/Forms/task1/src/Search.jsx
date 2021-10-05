@@ -21,7 +21,7 @@ class Search extends Component {
           value={this.state.value}
           className='search__input'
         />
-        <button onClick={this.search} className='search__button' type='submit'>
+        <button className='search__button' type='submit'>
           Search
         </button>
       </form>

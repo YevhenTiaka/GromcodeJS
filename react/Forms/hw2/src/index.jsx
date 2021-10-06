@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.scss';
 function Square(props) {
   return (
     <button className='square' onClick={props.onClick}>
@@ -121,8 +122,6 @@ class Game extends React.Component {
 
 // ========================================
 
-ReactDOM.render(<Game />, document.getElementById('root'));
-
 function calculateWinner(squares) {
   const lines = [
     [0, 1, 2],
@@ -142,3 +141,6 @@ function calculateWinner(squares) {
   }
   return null;
 }
+
+export default Game;
+ReactDOM.render(<Game />, document.getElementById('root'));

@@ -1,5 +1,5 @@
 import React from 'react';
-import Board from './Board';
+import Board from './Board.jsx';
 
 class Game extends React.Component {
   state = {
@@ -23,7 +23,7 @@ class Game extends React.Component {
     this.setState({
       history: history.concat([
         {
-          squares: squares,
+          squares,
         },
       ]),
       stepNumber: history.length,
@@ -39,12 +39,12 @@ class Game extends React.Component {
   }
 
   render() {
-    const history = this.state.history;
+    const { history } = this.state;
     const current = history[this.state.stepNumber];
     const winner = calculateWinner(current.squares);
 
     const moves = history.map((step, move) => {
-      const desc = move ? 'Go to move #' + move : 'Go to game start';
+      const desc = move ? `Go to move #${move}` : 'Go to game start';
       return (
         <li key={move}>
           <button onClick={() => this.jumpTo(move)}>{desc}</button>
@@ -54,9 +54,9 @@ class Game extends React.Component {
 
     let status;
     if (winner) {
-      status = 'Winner: ' + winner;
+      status = `Winner: ${winner}`;
     } else {
-      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+      status = `Next player: ${this.state.xIsNext ? 'X' : 'O'}`;
     }
 
     return (

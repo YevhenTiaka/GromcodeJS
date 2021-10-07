@@ -1,9 +1,5 @@
 module.exports = {
-  extends: [
-    'eslint-config-airbnb-base',
-    'prettier',
-    'plugin:react/recommended',
-  ],
+  extends: ['eslint-config-airbnb-base', 'prettier', 'plugin:react/recommended'],
   parser: 'babel-eslint',
   env: {
     es6: true,
@@ -18,10 +14,16 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
+
   rules: {
     'import/extensions': 0,
     'import/prefer-default-export': 0,
     'no-console': 0,
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
 };

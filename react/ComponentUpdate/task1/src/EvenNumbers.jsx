@@ -3,7 +3,6 @@ import React from 'react';
 class EvenNumbers extends React.Component {
   // eslint-disable-next-line class-methods-use-this
   shouldComponentUpdate(nextProps) {
-  
     return nextProps.number % 2 === 0;
   }
 

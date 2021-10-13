@@ -23,10 +23,9 @@ class CreateTaskInput extends React.Component {
       <div className="create-task">
         <input
           type="text"
-          className="create-task__input"
-          id=""
           value={this.state.value}
           onChange={this.handleChange}
+          className="create-task__input"
         />
         <button className="btn create-task__btn" onClick={this.handleTaskCreate}>
           Create
@@ -37,6 +36,3 @@ class CreateTaskInput extends React.Component {
 }
 
 export default CreateTaskInput;
-// take text from input and
-// create task with this text
-// add created task to the list

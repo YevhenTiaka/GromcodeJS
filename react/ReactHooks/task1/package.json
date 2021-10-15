@@ -1,7 +1,6 @@
 {
   "name": "task-2",
   "version": "1.0.0",
-  "description": "",
   "main": "package.js",
   "scripts": {
     "start": "webpack-dev-server --mode=development --devtool eval-source-map --open",
@@ -23,6 +22,8 @@
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.3.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-react": "^7.26.1",
     "html-webpack-plugin": "^5.3.2",
     "mini-css-extract-plugin": "^2.3.0",
@@ -39,5 +40,6 @@
   },
   "dependencies": {
     "classnames": "^2.3.1"
-  }
+  },
+  "description": ""
 }

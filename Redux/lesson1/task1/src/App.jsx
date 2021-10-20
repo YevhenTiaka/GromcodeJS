@@ -5,7 +5,7 @@ import { themes, ThemeContext } from './themes-context.js';
 
 class App extends React.Component {
   state = {
-    theme: themes.dark,
+    theme: themes.light,
   };
 
   // eslint-disable-next-line class-methods-use-this

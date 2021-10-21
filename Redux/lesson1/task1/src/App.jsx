@@ -1,28 +1,24 @@
 import React from 'react';
 
-import ThemedButton from './ThemedButton.jsx';
-import { themes, ThemeContext } from './themes-context.js';
+import Header from './Header.jsx';
+import { UserContext } from './user-context.js';
 
 class App extends React.Component {
   state = {
-    theme: themes.light,
+    userData: {
+      name: 'Nikola Tesla',
+      avatar_url: 'https://avatars3.githubusercontent.com/u10001',
+    },
   };
 
   // eslint-disable-next-line class-methods-use-this
-  toggleTheme = () => {
-    const newTheme = this.state.theme === themes.dark ? themes.light : themes.dark;
-    this.setState({
-      theme: newTheme,
-    });
-  };
 
   render() {
     return (
-      <div>
-        <ThemeContext.Provider value={this.state.theme}>
-          <ThemedButton onClick={this.toggleTheme}>Dynamic Theme</ThemedButton>
-        </ThemeContext.Provider>
-        <ThemedButton onClick={this.toggleTheme}>Default Theme</ThemedButton>
+      <div className="page">
+        <UserContext.Provider value={this.state.userData}>
+          <Header />
+        </UserContext.Provider>
       </div>
     );
   }

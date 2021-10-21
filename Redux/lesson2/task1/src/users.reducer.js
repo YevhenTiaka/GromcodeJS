@@ -1,4 +1,4 @@
-const initialState = [];
+const initialState = { usersList: [] };
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {

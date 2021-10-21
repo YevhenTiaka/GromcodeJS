@@ -25,13 +25,13 @@ const counterReducer = (state = initialState, action) => {
       return {
         ...state,
 
-        history: state.history.concat('+', 1),
+        history: state.history.concat(`+${1}`),
       };
     case DECREMENT:
       return {
         ...state,
 
-        history: state.history.concat(-1),
+        history: state.history.concat(`-${1}`),
       };
     case RESET:
       return {

@@ -1,7 +1,6 @@
 import React from 'react';
-
 import Header from './Header.jsx';
-import { UserContext } from './user-context.js';
+import { UserContext } from './user-context';
 
 class App extends React.Component {
   state = {
@@ -10,8 +9,6 @@ class App extends React.Component {
       avatar_url: 'https://avatars3.githubusercontent.com/u10001',
     },
   };
-
-  // eslint-disable-next-line class-methods-use-this
 
   render() {
     return (

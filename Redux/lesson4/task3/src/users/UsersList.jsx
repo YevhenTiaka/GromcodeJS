@@ -17,7 +17,7 @@ const UsersList = ({ users, currentPage, handlePrev, handleNext }) => {
         handlePrev={handlePrev}
         handleNext={handleNext}
         totalItems={users.length}
-        currentPage={currentPage}
+        currentPage={pageNumber}
         itemsPerPage={itemsPerPage}
       />
       <ul className="users">

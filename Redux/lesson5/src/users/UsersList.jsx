@@ -30,16 +30,16 @@ const UsersList = ({ users, currentPage, goPrev, goNext }) => {
   );
 };
 
-const mapState = state => ({
+const mapStateToProps = state => ({
   users: usersListSelector(state),
   currentPage: currentPageSelector(state),
 });
 
 const mapDispatch = {
-  goPrev: usersActions.goPrev,
-  goNext: usersActions.goNext,
+  prevPage: usersActions.goPrev,
+  nextPage: usersActions.goNext,
 };
 
-const connector = connect(mapState, mapDispatch);
+const connector = connect(mapStateToProps, mapDispatch);
 
 export default connector(UsersList);

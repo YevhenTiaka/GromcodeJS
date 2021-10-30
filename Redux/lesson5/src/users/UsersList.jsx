@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Pagination from './Pagination';
 import User from './User';
 import * as usersActions from './users.actions';
+import { usersListSelector, currentPageSelector } from './users.selectors';
 
 const UsersList = ({ users, currentPage, goPrev, goNext }) => {
   const itemsPerPage = 3;
@@ -30,8 +31,8 @@ const UsersList = ({ users, currentPage, goPrev, goNext }) => {
 };
 
 const mapState = state => ({
-  users: state.usersList,
-  currentPage: state.currentPage,
+  users: usersListSelector(state),
+  currentPage: currentPageSelector(state),
 });
 
 const mapDispatch = {

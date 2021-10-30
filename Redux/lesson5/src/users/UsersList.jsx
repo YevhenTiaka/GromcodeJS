@@ -5,7 +5,7 @@ import User from './User';
 import * as usersActions from './users.actions';
 import { usersListSelector, currentPageSelector } from './users.selectors';
 
-const UsersList = ({ users, currentPage, goPrev, goNext }) => {
+const UsersList = ({ users, currentPage, prevPage, nextPage }) => {
   const itemsPerPage = 3;
   const pageNumber = currentPage + 1;
   const startIndex = (pageNumber - 1) * itemsPerPage;
@@ -15,8 +15,8 @@ const UsersList = ({ users, currentPage, goPrev, goNext }) => {
   return (
     <div>
       <Pagination
-        goPrev={goPrev}
-        goNext={goNext}
+        goPrev={prevPage}
+        goNext={nextPage}
         totalItems={users.length}
         currentPage={pageNumber}
         itemsPerPage={itemsPerPage}
@@ -36,8 +36,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatch = {
-  prevPage: usersActions.goPrev,
-  nextPage: usersActions.goNext,
+  prevPage: usersActions.prevPage,
+  nextPage: usersActions.nextPage,
 };
 
 const connector = connect(mapStateToProps, mapDispatch);

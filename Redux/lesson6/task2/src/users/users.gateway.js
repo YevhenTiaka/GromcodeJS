@@ -1,9 +1,9 @@
 const baseUrl = 'https://api.github.com/users';
 
-export const getUserData = userName =>
-  fetch(`${baseUrl}/${userName}`).then(responce => {
-    if (responce.ok) {
-      return responce.json();
+export const getUserData = (userName) =>
+  fetch(`${baseUrl}/${userName}`).then((response) => {
+    if (response.ok) {
+      return response.json();
     }
     throw new Error();
   });
